@@ -27,6 +27,8 @@
     public AppiumDriver<MobileElement> driver;
     public WebDriverWait wait;
 
+
+/*
     //Elements
 //    String secondNewJob = "//android.widget.FrameLayout[2]/android.widget.LinearLayout/" +
 //            "android.widget.RelativeLayout/android.widget.ImageView";
@@ -47,6 +49,27 @@
         driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),caps);
         wait = new WebDriverWait(driver, 10);
     }
+*/
+
+            @BeforeMethod
+            public void setup () throws MalformedURLException {
+
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                capabilities.setCapability("testobjectApiKey", "39A15FAEB5F342F897D6843DE2A4BD8C");
+                capabilities.setCapability("platformName", "Android");
+                capabilities.setCapability("platformVersion", "8.1.0");
+                capabilities.setCapability("deviceName", "LG Nexus 5X Free");
+                capabilities.setCapability("app_package", "com.alibaba.aliexpresshd");
+                capabilities.setCapability("noReset", "false");
+                driver = new AndroidDriver<MobileElement>(new URL("https://eu1.appium.testobject.com/wd/hub"),capabilities);
+
+
+            }
+
+
+
+
+
 
     @Test
     public void signInNegativeTest () throws InterruptedException {
