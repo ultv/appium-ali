@@ -61,6 +61,9 @@
                 capabilities.setCapability("deviceName", "LG Nexus 5X Free");
                 capabilities.setCapability("app_package", "com.alibaba.aliexpresshd");
                 capabilities.setCapability("noReset", "false");
+                capabilities.setCapability("automationName", "uiautomator2");
+                driver.getCapabilities().getCapability("testobject_test_report_url");
+                driver.getCapabilities().getCapability("testobject_test_live_view_url");
                 driver = new AndroidDriver<MobileElement>(new URL("https://eu1.appium.testobject.com/wd/hub"),capabilities);
 
 
